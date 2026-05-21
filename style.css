@@ -1,0 +1,19 @@
+.container{
+    background-color: aqua;
+    border-radius: 0.5rem;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    columns:;
+}
+.box{
+    background-color: aliceblue;
+    display: grid;
+    width: 100px;
+    height: 150px;
+    margin: 10px;
+}
+.imagem{
+    display: block;
+    width: 100%;
+}
