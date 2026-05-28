@@ -1,66 +1,94 @@
 @charset "UTF-8";
 
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    width: 8;
-    height: 100%;
-    display: block;
-    justify-content: center;
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-header{
+
+header {
     background-color: aqua;
     border-radius: 0.4rem;
 }
-header h1{
+
+header h1 {
     text-align: center;
+    padding: 1rem 0 0.5rem;
 }
-header p{
+
+header p {
     margin: 1rem;
 }
-main{
-    min-width: 270px;
-    max-width: 1300px;
-    margin: auto;
-}
-.taskbar{
+
+/* nav já está dentro do header, não precisa de estilo extra */
+.taskbar {
     background-color: bisque;
-    justify-content: center;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* evita estouro em telas pequenas */
+    gap: 6px;
+    padding: 8px;
 }
-.home{
+
+.home {
     background-color: rgb(185, 254, 254);
     display: flex;
-    width: 100px;
-    height: 20px;
-    margin: 5px;
+    align-items: center;
     justify-content: center;
+    padding: 4px 12px;   /* largura adaptável ao conteúdo */
+    border-radius: 4px;
 }
-.container{
-    margin: auto;
+
+.home a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    flex: 1;              /* empurra o footer para baixo */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.container {
     background-color: aqua;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    justify-items: stretch;
-    align-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
-}
-.box{
-    background-color: aliceblue;
-    display: grid;
-    width: 300px;
-    height: 400px;
-    margin: 10px;
+    padding: 10px;
     border-radius: 0.4rem;
 }
-.imagem{
+
+.box {
+    background-color: aliceblue;
+    width: 100%;
+    min-height: 400px;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem {
     display: block;
     width: 100%;
     height: 100%;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;    /* imagem não distorce */
     border-radius: 0.4rem;
+}
+
+footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 1rem;
 }
