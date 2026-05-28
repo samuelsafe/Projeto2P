@@ -36,7 +36,23 @@ header p {
     gap: 6px;
     padding: 8px;
 }
-
+.btn-box {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 255, 255, 0.15);
+    border: none;
+    border-radius: 0 0 0.4rem 0.4rem; /* arredonda só embaixo */
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+}
+.btn-box:hover {
+    background-color: rgb(0, 200, 200);
+}
 .home {
     background-color: rgb(185, 254, 254);
     display: flex;
@@ -67,7 +83,6 @@ main {
     padding: 10px;
     border-radius: 0.4rem;
 }
-
 .box {
     background-color: aliceblue;
     width: 100%;
@@ -75,16 +90,15 @@ main {
     border-radius: 0.4rem;
     overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;  /* empilha verticalmente */
 }
 
 .imagem {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;    /* imagem não distorce */
-    border-radius: 0.4rem;
+    flex: 1;                 /* imagem ocupa todo o espaço restante */
+    object-fit: cover;       /* não distorce */
+    border-radius: 0.4rem 0.4rem 0 0; /* arredonda só em cima */
 }
 
 footer {
